@@ -14,7 +14,7 @@ Simple module wrapper around the local storage helper.
 requires https://github.com/jashkenas/underscore
 ```
 
-## Usage
+## Usage
 To use it you need to set undersocre as global window variable.
 Once you included underscore, you can use the module like you always do in AngularJS.
 
