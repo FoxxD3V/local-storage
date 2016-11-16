@@ -1,4 +1,4 @@
-_storage: {
+_.storage = {
 	_prefix: 'prefix_',
 	_debug: true,
 	check: function () {
