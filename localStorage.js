@@ -4,16 +4,17 @@ _.storage = {
 	check: function () {
 		return _.isUndefined(localStorage) ? false : true;
 	},
-	get: function (key) {
+	get: function (key, hasPrefix) {
 		if (!this.check()) return;
-		return this.onGet(localStorage.getItem(this._key(key)));
+		key = (!hasPrefix) ? this._key(key) : key;
+		return this.onGet(localStorage.getItem(key));
 	},
 	getAll: function () {
 		if (!this.check()) return ({});
 
 		var self = this;
 		var items = _.map(_.keys(localStorage), function (key) {
-			return self.get(key);
+			return self.get(key, true);
 		});
 
 		return items;
