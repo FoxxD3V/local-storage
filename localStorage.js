@@ -49,7 +49,7 @@ _.storage = {
 	},
 	onGet: function (value) {
 		try {
-			value = JSON.parse(value)
+			value = JSON.parse(value);
 		} catch (e) {
 			if ( this._debug ) {
 				console.error(e);
