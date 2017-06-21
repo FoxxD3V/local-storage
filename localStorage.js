@@ -37,7 +37,7 @@ _.storage = {
 		if (!this.check()) return;
 
 		_.each(_.keys(localStorage), function (e) {
-			e.indexOf(key) >= 0 && this.remove(e);
+			if (e.indexOf(key) >= 0) this.remove(e);
 		}, this);
 	},
 	clear: function () {
