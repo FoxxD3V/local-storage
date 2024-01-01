@@ -1,30 +1,65 @@
-# localstorage
+## Simple and Browser-Independent Local Storage Helper based on Underscore JS
 
-simple helper object for persisting and handling any type of data in localstorage
+This module is a simple wrapper around the Local Storage helper. It requires Underscore JS: [https://github.com/jashkenas/underscore](https://github.com/jashkenas/underscore).
 
-```
-requires https://github.com/jashkenas/underscore
-```
-___
-# localstorage for angular
-
-Simple module wrapper around the local storage helper. 
+### Installation
 
 ```
-requires https://github.com/jashkenas/underscore
+npm install local-storage
 ```
 
-## Usage
-To use it you need to set undersocre as global window variable.
-Once you included underscore, you can use the module like you always do in AngularJS.
+### Usage
 
-### Include underscore with browserify
 ```javascript
-window._ = require('underscore');
-````
+// Import the module
+const local_storage = require('local-storage');
 
-### Include underscore Without browserify
-Simply include underscore into your template
-```html
-<script src="/path_to_underscore/underscore-min.js"></script>
+// Set a value
+local_storage.set('key', 'value');
+
+// Get a value
+const value = local_storage.get('key');
+
+// Remove a value
+local_storage.remove('key');
+
+// List all keys
+const keys = local_storage.keys();
+
+// List all values
+const values = local_storage.values();
 ```
+
+### Examples
+
+```javascript
+// Set a value
+local_storage.set('name', 'John Doe');
+
+// Get a value
+const name = local_storage.get('name');
+console.log(name); // "John Doe"
+
+// Remove a value
+local_storage.remove('name');
+
+// List all keys
+const keys = local_storage.keys();
+console.log(keys); // []
+
+// List all values
+const values = local_storage.values();
+console.log(values); // []
+```
+
+### Functions
+
+* `set(key, value)`: Sets a value in Local Storage.
+* `get(key)`: Gets a value from Local Storage.
+* `remove(key)`: Removes a value from Local Storage.
+* `keys()`: Lists all keys in Local Storage.
+* `values()`: Lists all values in Local Storage.
+
+### License
+
+This module is licensed under the MIT License.
